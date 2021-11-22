@@ -1,5 +1,5 @@
-using FileContextCore;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Planets.Application;
 using Planets.Persistence;
 
@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddDbContext<IPlanetsContext, PlanetsContext>(o => o.UseFileContextDatabase());
+builder.Services.AddDbContext<IPlanetsContext, PlanetsContext>(options => options.UseInMemoryDatabase(databaseName: "Planets"));
 builder.Services.AddMediatR(typeof(Program), typeof(ApplicationInfo));
 
 var app = builder.Build();

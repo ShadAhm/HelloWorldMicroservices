@@ -12,8 +12,6 @@ public class PlanetsContext : DbContext, IPlanetsContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Planet>().ToTable("planets");
-
         base.OnModelCreating(modelBuilder);
     }
 }
