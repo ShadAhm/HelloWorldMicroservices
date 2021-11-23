@@ -21,7 +21,10 @@ public class GetPlanetsListQueryHandler : IRequestHandler<GetPlanetsListQuery, I
     public async Task<IEnumerable<PlanetDto>> Handle(GetPlanetsListQuery request, CancellationToken cancellationToken)
     {
         var planets = await _context.Planets.ToListAsync(cancellationToken);
-        return (planets).Select(p => new PlanetDto { Name = p.Name });
+        return (planets).Select(p => new PlanetDto { 
+            Name = p.Name,
+            Endonym = p.Endonym?.Name
+        });
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Planets.Domain.Entities;
+using Planets.Persistence.EntityConfigurations;
 
 namespace Planets.Persistence;
 
@@ -12,6 +13,6 @@ public class PlanetsContext : DbContext, IPlanetsContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        base.OnModelCreating(modelBuilder);
+        modelBuilder.ApplyConfiguration(new PlanetEntityTypeConfiguration());
     }
 }

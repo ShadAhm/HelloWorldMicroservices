@@ -1,5 +1,4 @@
 ﻿using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Planets.Application.Planets.Commands;
 using Planets.Application.Planets.Queries;
@@ -20,7 +19,7 @@ namespace Planets.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<int> Post(InsertPlanetCommand command)
+        public async Task<Guid> Post(InsertPlanetCommand command)
         {
             _logger.Log(LogLevel.Information, $"Creating planet {command.Name}");
             return await _mediator.Send(command);

@@ -9,4 +9,5 @@ namespace Planets.Application.Planets.Queries;
 public class PlanetDto
 {
     public string Name { get; set; }
+    public string? Endonym { get; set; }
 }

@@ -4,7 +4,7 @@ using Planets.Persistence;
 
 namespace Planets.Application.Planets.Commands;
 
-internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand, int>
+internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand, Guid>
 {
     private readonly IPlanetsContext _context;
 
@@ -13,10 +13,11 @@ internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand,
         _context = context;
     }
 
-    public async Task<int> Handle(InsertPlanetCommand request, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(InsertPlanetCommand request, CancellationToken cancellationToken)
     {
-        var o = await _context.Planets.AddAsync(new Planet(request.Name));
+        var entity = new Planet(request.Name, false, "rando");
+        await _context.Planets.AddAsync(entity);
         await _context.SaveChangesAsync(cancellationToken);
-        return 0;
+        return entity.Id;
     }
 }
