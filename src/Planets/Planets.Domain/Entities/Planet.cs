@@ -26,4 +26,6 @@ public class Planet : Entity
     {
         IsDwarf = false;
     }
+
+    public bool HasEndonym() => Endonym != null;
 }
