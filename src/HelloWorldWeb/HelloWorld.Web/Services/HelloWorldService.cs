@@ -18,8 +18,9 @@ public class HelloWorldService : IHelloWorldService
 
     public async Task<string> GetHello()
     {
-        var wutt = await _planetService.GetString("api/Planet");
-        Console.WriteLine("wutt");
-        return await _greetingService.GetString("greet?greetee=ook");
+        // TODO: get name of planet as send to greeting service
+        var planets = await _planetService.GetString("api/Planet");
+
+        return await _greetingService.GetString("greet?greetee=world");
     }
 }

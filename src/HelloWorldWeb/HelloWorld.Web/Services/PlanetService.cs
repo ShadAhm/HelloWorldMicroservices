@@ -16,5 +16,15 @@ public class PlanetService : IPlanetService
         _httpClient.BaseAddress = new Uri(path);
     }
 
-    public async Task<string> GetString(string uri) => await _httpClient.GetStringAsync(uri);
+    public async Task<string> GetString(string uri)
+    {
+        var request = await _httpClient.GetAsync(uri);
+
+        if(request.IsSuccessStatusCode)
+        {
+            return await request.Content.ReadAsStringAsync();
+        }
+
+        return string.Empty; 
+    }
 }
