@@ -18,7 +18,7 @@
       "DownstreamHostAndPorts": [
         {
           "Host": "localhost",
-          "Port": 7130
+          "Port": 7060
         }
       ],
       "UpstreamPathTemplate": "/planets/{whatever}",

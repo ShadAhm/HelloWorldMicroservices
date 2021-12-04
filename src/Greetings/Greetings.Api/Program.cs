@@ -8,13 +8,13 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<IGreetService, GreetService>();
 
-var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
+var corsPolicyName = "_allowHelloWorldApiGateway";
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy(name: MyAllowSpecificOrigins,
+    options.AddPolicy(name: corsPolicyName,
                       builder =>
                       {
-                          builder.WithOrigins("https://localhost:7183");
+                          builder.WithOrigins("https://localhost:7189");
                       });
 });
 
@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors(MyAllowSpecificOrigins);
+app.UseCors(corsPolicyName);
 
 app.MapGet("/greet", (string greetee, IGreetService service) => service.Execute(greetee));
 

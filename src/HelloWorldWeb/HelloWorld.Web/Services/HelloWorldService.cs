@@ -8,11 +8,18 @@ public interface IHelloWorldService
 public class HelloWorldService : IHelloWorldService
 {
     private readonly IGreetingService _greetingService;
+    private readonly IPlanetService _planetService;
 
-    public HelloWorldService(IGreetingService greetingService)
+    public HelloWorldService(IGreetingService greetingService, IPlanetService planetService)
     {
         _greetingService = greetingService;
+        _planetService = planetService;
     }
 
-    public async Task<string> GetHello() => await _greetingService.Greet();
+    public async Task<string> GetHello()
+    {
+        var wutt = await _planetService.GetString("api/Planet");
+        Console.WriteLine("wutt");
+        return await _greetingService.GetString("greet?greetee=ook");
+    }
 }
