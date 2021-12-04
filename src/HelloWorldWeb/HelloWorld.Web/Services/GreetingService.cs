@@ -17,7 +17,7 @@ public class GreetingService : IGreetingService
 
     public async Task<string> Greet()
     {
-        return await _httpClient.GetStringAsync("greet?greetee=perl");
+        return await _httpClient.GetStringAsync("greet?greetee=earth");
     }
 
 }
