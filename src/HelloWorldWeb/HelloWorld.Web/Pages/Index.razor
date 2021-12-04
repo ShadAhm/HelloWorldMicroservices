@@ -1,0 +1,17 @@
+﻿@page "/"
+@using HelloWorld.Web.Services
+@inject IHelloWorldService _service
+
+<PageTitle>@message</PageTitle>
+
+<h1>@message</h1>
+
+@code
+{
+    private string message = "Not set";
+
+    protected override async Task OnInitializedAsync()
+    {
+        message = await _service.GetHello();
+    }
+}
