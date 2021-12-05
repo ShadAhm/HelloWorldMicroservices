@@ -15,7 +15,7 @@ There is a need for an application with an ability to greet a planet. Default ou
 
 HelloWorldMicroservices is a distributed-system application. It consists mainly of the front-end web app, and two microservices - Greetings API and Planets API. An API gateway sits between the front-end and web services.
 
-
+![Architectural diagram](arch_diagram.png)
 
 ## Technologies used:
 
