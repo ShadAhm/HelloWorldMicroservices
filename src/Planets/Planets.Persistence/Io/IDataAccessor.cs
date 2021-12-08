@@ -2,5 +2,5 @@
 
 public interface IDataAccessor
 {
-    string ReadFile();
+    string ReadFile(string fileName);
 }

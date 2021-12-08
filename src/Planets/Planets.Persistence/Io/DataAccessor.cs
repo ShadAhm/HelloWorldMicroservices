@@ -11,9 +11,9 @@ public class DataAccessor : IDataAccessor
         _options = options.Value;
     }
 
-    public string ReadFile()
+    public string ReadFile(string fileName)
     {
-        string path = Path.Combine(_options.RootDirectory, @"planets.json");
+        string path = Path.Combine(_options.RootDirectory, fileName);
         return File.ReadAllText(path);
     }
 }

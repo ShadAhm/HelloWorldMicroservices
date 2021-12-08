@@ -20,8 +20,6 @@ internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand,
         //await _context.SaveChangesAsync(cancellationToken);
         //return entity.Id;
 
-        string hardlyAnything=  _context.ReadFile();
-
         return await Task.FromResult(Guid.NewGuid());
     }
 }
