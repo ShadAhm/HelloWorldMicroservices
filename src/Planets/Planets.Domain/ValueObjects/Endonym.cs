@@ -5,19 +5,15 @@ public class Endonym : ValueObject
     public string Value { get; private set; } = string.Empty;
     public string Culture { get; private set; } = string.Empty;
 
-    public Endonym(string name)
+    public Endonym(string value, string culture)
     {
-        Value = name;
+        Value = value;
+        Culture = culture;
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
         yield return Value;
         yield return Culture;
-    }
-
-    public static Endonym FromName(string name)
-    {
-        return new Endonym(name);
     }
 }

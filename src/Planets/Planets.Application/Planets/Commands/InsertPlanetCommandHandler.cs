@@ -15,13 +15,6 @@ internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand,
 
     public async Task<Guid> Handle(InsertPlanetCommand request, CancellationToken cancellationToken)
     {
-        //var entity = new Planet(request.Name, request.IsDwarf, request.Endonym);
-        //await _context.Planets.AddAsync(entity);
-        //await _context.SaveChangesAsync(cancellationToken);
-        //return entity.Id;
-
-        var o = _context.GetAll();
-
-        return await Task.FromResult(Guid.NewGuid());
+        throw new InvalidOperationException();
     }
 }
