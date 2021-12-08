@@ -6,7 +6,7 @@ public class Planet : Entity
 {
     public string Name { get; set; } = string.Empty;
     public bool IsDwarf { get; private set; }
-    public IEnumerable<Endonym> Endonym { get; set; } = new List<Endonym>();
+    public IEnumerable<Endonym> Endonyms { get; set; } = new List<Endonym>();
 
     public Planet(){}
 
@@ -26,5 +26,5 @@ public class Planet : Entity
         IsDwarf = false;
     }
 
-    public bool HasEndonym() => Endonym != null;
+    public bool HasEndonym() => Endonyms != null;
 }
