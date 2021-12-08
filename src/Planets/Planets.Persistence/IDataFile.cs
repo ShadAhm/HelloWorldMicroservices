@@ -1,7 +1,7 @@
 ﻿namespace Planets.Persistence
 {
-    internal interface IDataFile<T>
+    public interface IDataFile<T>
     {
-        void Initialize();
+        IEnumerable<T> GetAll();
     }
 }

@@ -6,9 +6,9 @@ namespace Planets.Application.Planets.Commands;
 
 internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand, Guid>
 {
-    private readonly Persistence.Io.IDataAccessor _context;
+    private readonly IDataFile<Planet> _context;
 
-    public InsertPlanetCommandHandler(Persistence.Io.IDataAccessor context)
+    public InsertPlanetCommandHandler(IDataFile<Planet> context)
     {
         _context = context;
     }
@@ -19,6 +19,8 @@ internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand,
         //await _context.Planets.AddAsync(entity);
         //await _context.SaveChangesAsync(cancellationToken);
         //return entity.Id;
+
+        var o = _context.GetAll();
 
         return await Task.FromResult(Guid.NewGuid());
     }

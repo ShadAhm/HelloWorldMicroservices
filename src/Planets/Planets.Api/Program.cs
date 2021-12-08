@@ -1,5 +1,6 @@
 using MediatR;
 using Planets.Application;
+using Planets.Domain.Entities;
 using Planets.Persistence;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +12,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddMediatR(typeof(Program), typeof(ApplicationInfo));
 
 builder.Services.AddScoped<Planets.Persistence.Io.IDataAccessor, Planets.Persistence.Io.DataAccessor>();
+builder.Services.AddScoped<IDataFile<Planet>, DataFile<Planet>>();
 
 builder.Services.Configure<WebHostOptions>(o => o.RootDirectory = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot"));
 
