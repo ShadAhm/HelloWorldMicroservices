@@ -1,0 +1,23 @@
+[
+  {
+    "id": "C455EF05-CE25-45C2-99E2-347DA907491F",
+    "name": "Earth",
+    "uniqueName": "MilkyWay-SolarSystem-Earth",
+    "isDwarf": false,
+    "endonyms": 
+    [
+      {
+        "value": "world",
+        "culture": null
+      },
+      {
+        "value": "mundo",
+        "culture": ""
+      },
+      {
+        "value": "dunia",
+        "culture": "ms-MY"
+      }
+    ]
+  }
+]

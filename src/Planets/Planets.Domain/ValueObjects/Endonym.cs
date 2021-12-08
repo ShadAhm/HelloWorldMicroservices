@@ -2,16 +2,18 @@
 
 public class Endonym : ValueObject
 {
-    public string Name { get; private set; }
+    public string Value { get; private set; } = string.Empty;
+    public string Culture { get; private set; } = string.Empty;
 
     public Endonym(string name)
     {
-        Name = name;
+        Value = name;
     }
 
     protected override IEnumerable<object> GetEqualityComponents()
     {
-        yield return Name;
+        yield return Value;
+        yield return Culture;
     }
 
     public static Endonym FromName(string name)

@@ -4,17 +4,16 @@ namespace Planets.Domain.Entities;
 
 public class Planet : Entity
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = string.Empty;
     public bool IsDwarf { get; private set; }
-    public Endonym? Endonym { get; set; }
+    public IEnumerable<Endonym> Endonym { get; set; } = new List<Endonym>();
 
     public Planet(){}
 
-    public Planet(string name, bool isDwarf, string? endonym = null)
+    public Planet(string name, bool isDwarf)
     {
         Name = name;
         IsDwarf = isDwarf;
-        Endonym = endonym == null ? null : new Endonym(endonym);
     }
 
     public void Demote()
