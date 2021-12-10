@@ -13,7 +13,7 @@ internal class InsertPlanetCommandHandler : IRequestHandler<InsertPlanetCommand,
         _context = context;
     }
 
-    public async Task<Guid> Handle(InsertPlanetCommand request, CancellationToken cancellationToken)
+    public Task<Guid> Handle(InsertPlanetCommand request, CancellationToken cancellationToken)
     {
         throw new InvalidOperationException();
     }

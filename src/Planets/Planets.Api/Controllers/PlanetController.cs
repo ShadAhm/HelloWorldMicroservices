@@ -26,9 +26,13 @@ namespace Planets.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<PlanetDto>> Get()
+        public async Task<PlanetSingleEndonymDto> Get(string name, string? culture)
         {
-            return await _mediator.Send(new GetPlanetsListQuery());
+            return await _mediator.Send(new GetPlanetQuery
+            {
+                Name = name,
+                Culture = culture
+            });
         }
     }
 }

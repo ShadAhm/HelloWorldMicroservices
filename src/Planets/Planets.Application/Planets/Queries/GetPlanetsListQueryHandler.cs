@@ -19,14 +19,20 @@ public class GetPlanetsListQueryHandler : IRequestHandler<GetPlanetsListQuery, I
         _context = context;
     }
 
-    public async Task<IEnumerable<PlanetDto>> Handle(GetPlanetsListQuery request, CancellationToken cancellationToken)
+    public Task<IEnumerable<PlanetDto>> Handle(GetPlanetsListQuery request, CancellationToken cancellationToken)
     {
         var planets = _context.GetAll();
-        return (planets).Select(p => new PlanetDto
+        var dtos = (planets).Select(p => new PlanetDto
         {
             Name = p.Name,
-            Endonym = p.Endonyms.FirstOrDefault()?.Value
+            Endonyms = p.Endonyms.Select(e => new EndonymDto
+            {
+                Culture = e.Culture,
+                Value = e.Value
+            })
         });
+
+        return Task.FromResult(dtos);
     }
 }
 
