@@ -4,11 +4,12 @@
     "name": "Earth",
     "uniqueName": "MilkyWay-SolarSystem-Earth",
     "isDwarf": false,
+    "linguaFrancaCulture": "en-GB",
     "endonyms": 
     [
       {
         "value": "world",
-        "culture": null
+        "culture": "en-GB"
       },
       {
         "value": "dunia",

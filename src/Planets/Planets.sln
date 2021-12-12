@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Application", "Plan
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Planets.Persistence", "Planets.Persistence\Planets.Persistence.csproj", "{8EBCCAC6-CA8A-43A3-9C8E-A60F1FAF2D8F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Planets.Application.Tests", "Planets.Application.Tests\Planets.Application.Tests.csproj", "{04F910CD-7067-4D26-9AEC-3FF2B89B4C84}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{8EBCCAC6-CA8A-43A3-9C8E-A60F1FAF2D8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EBCCAC6-CA8A-43A3-9C8E-A60F1FAF2D8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EBCCAC6-CA8A-43A3-9C8E-A60F1FAF2D8F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04F910CD-7067-4D26-9AEC-3FF2B89B4C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04F910CD-7067-4D26-9AEC-3FF2B89B4C84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04F910CD-7067-4D26-9AEC-3FF2B89B4C84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04F910CD-7067-4D26-9AEC-3FF2B89B4C84}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

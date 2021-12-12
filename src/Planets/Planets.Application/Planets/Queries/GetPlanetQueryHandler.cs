@@ -24,7 +24,7 @@ public class GetPlanetQueryHandler : IRequestHandler<GetPlanetQuery, PlanetSingl
             {
                 Name = planet.Name,
                 Endonym = planet.Endonyms
-                    .FirstOrDefault(o => string.IsNullOrWhiteSpace(request.Culture) && o.Culture == null || o.Culture == request.Culture)
+                    .FirstOrDefault(o => string.IsNullOrWhiteSpace(request.Culture) && o.Culture == planet.LinguaFrancaCulture || o.Culture == request.Culture)
                     ?.Value
             };
 
